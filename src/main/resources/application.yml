@@ -1,0 +1,7 @@
+server:
+  port: 6666
+spring:
+  application:
+    name: dp-demo
+
+
