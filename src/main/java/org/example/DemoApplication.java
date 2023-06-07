@@ -5,8 +5,6 @@ import com.alicp.jetcache.anno.config.EnableMethodCache;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.regex.Pattern;
-
 /**
  * Hello world!
  */
@@ -18,6 +16,4 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
 
-    String regex = "^\\d{3}16190.*|^31721294700.*|^31721295100.*";
-    Pattern pattern = Pattern.compile(regex);
 }

@@ -32,7 +32,7 @@ import java.util.concurrent.TimeUnit;
 public class TestController {
     public static final String CODE = "{$1.setA(\"i am changed\");}";
 
-    @CreateCache(expire = 5, timeUnit = TimeUnit.MINUTES, name = "user")
+//    @CreateCache(expire = 5, timeUnit = TimeUnit.MINUTES, name = "user")
     private Cache<String, User> userCache;
 
     @RequestMapping
