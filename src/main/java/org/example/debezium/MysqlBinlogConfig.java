@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Configuration;
 import java.io.File;
 import java.io.IOException;
 
-@Configuration
-@ConfigurationProperties(prefix ="debezium.datasource")
+//@Configuration
+//@ConfigurationProperties(prefix ="debezium.datasource")
 @Data
 public class MysqlBinlogConfig {
 

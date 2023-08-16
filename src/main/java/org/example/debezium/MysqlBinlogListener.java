@@ -33,7 +33,7 @@ import java.util.concurrent.Executor;
  * @date: 2023/8/7 13:56
  * @version: 1.0
  */
-@Component
+//@Component
 @Slf4j
 public class MysqlBinlogListener {
 
