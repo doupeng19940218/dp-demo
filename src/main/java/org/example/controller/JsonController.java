@@ -14,14 +14,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/json")
 public class JsonController {
 
-    @GetMapping
-    public Result json() {
+    @GetMapping("/loop")
+    public Result loop() {
         final Person person = new Person();
         person.setName("parent1");
         final Person parent2 = new Person();
         parent2.setName("parent2");
         person.setParent(parent2);
         parent2.setParent(person);
+        return Result.success(person);
+    }
+
+    @GetMapping
+    public Result json() {
+        final Person person = new Person();
+        person.setName("parent1");
         return Result.success(person);
     }
 
