@@ -1,5 +1,17 @@
 package com.ecovacs.adminmgr.controller
 
+fun sum(a: Int, b: Int): Int {   // Int 参数，返回值 Int
+    return a + b
+}
+
+fun sum2(a: Int, b: Int): Int = a + b
+
+fun vars(vararg v: Int) {
+    for (vt in v) {
+        print(vt)
+    }
+}
+
 class Greeter(val name: String) {
     fun greet() {
         println("Hello, $name")
@@ -12,6 +24,27 @@ class Greeter(val name: String) {
 
 
 fun main(args: Array<String>) {
+
+    //类型后面加?表示可为空
+    var age: String? = "23"
+//抛出空指针异常
+    val ages = age!!.toInt()
+//不做处理返回 null
+    val ages1 = age?.toInt()
+//age为空返回-1
+    val ages2 = age?.toInt() ?: -1
+
+//    var a = 1;
+//    var b: Int = 1;
+//    val c = 3
+//    val s1 = "a is $a"
+//    a = 2;
+//    val s2 = "${s1.replace("is", "was")}, but now is $a"
+//    println(s2)
+//    val sumLambda: (Int, Int) -> Int = { x, y -> x + y }
+//    println(sumLambda(1, 2))
+//    vars(1, 2, 3)
+//    println(sum2(1, 2))
 //    Greeter("World!").greet()          // 创建一个对象不用 new 关键字
 //    println(Greeter("World!").max(2, 3))
 
@@ -28,9 +61,9 @@ fun main(args: Array<String>) {
 //        in 1..2 -> print("x is odd")
 //        else -> print("x is funny")
 //    }
-    Runoob().foo()
-
-    var allByDefault: Int?
+//    Runoob().foo()
+//
+//    var allByDefault: Int?
 
 
 }
@@ -38,6 +71,7 @@ fun main(args: Array<String>) {
 class Runoob() {
     fun foo() = print("Foo")  // 成员函数
 }
+
 class Person {
 
     var lastName: String = "zhang"
