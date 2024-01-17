@@ -1,4 +1,4 @@
-package org.example.leetcode;
+package org.example.leetcode.easy;
 
 public class Class206 {
     public static void main(String[] args) {
