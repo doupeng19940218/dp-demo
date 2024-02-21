@@ -6,7 +6,7 @@
 
 package org.example.leetcode.hello.chapter_tree;
 
-import utils.*;
+import org.example.leetcode.hello.utils.*;
 
 /* AVL 树 */
 class AVLTree {

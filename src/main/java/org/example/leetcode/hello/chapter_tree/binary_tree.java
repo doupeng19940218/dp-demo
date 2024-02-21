@@ -6,7 +6,7 @@
 
 package org.example.leetcode.hello.chapter_tree;
 
-import utils.*;
+import org.example.leetcode.hello.utils.*;
 
 public class binary_tree {
     public static void main(String[] args) {

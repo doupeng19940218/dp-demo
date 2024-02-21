@@ -6,7 +6,7 @@
 
 package org.example.leetcode.hello.chapter_heap;
 
-import utils.*;
+import org.example.leetcode.hello.utils.*;
 
 import java.util.PriorityQueue;
 import java.util.Queue;

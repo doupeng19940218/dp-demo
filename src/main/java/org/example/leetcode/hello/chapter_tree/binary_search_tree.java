@@ -6,7 +6,7 @@
 
 package org.example.leetcode.hello.chapter_tree;
 
-import utils.*;
+import org.example.leetcode.hello.utils.*;
 
 /* 二叉搜索树 */
 class BinarySearchTree {

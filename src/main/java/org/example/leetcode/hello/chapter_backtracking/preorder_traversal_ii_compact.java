@@ -6,7 +6,7 @@
 
 package org.example.leetcode.hello.chapter_backtracking;
 
-import utils.*;
+import org.example.leetcode.hello.utils.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;

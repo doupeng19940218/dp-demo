@@ -6,7 +6,7 @@
 
 package org.example.leetcode.hello.chapter_hashing;
 
-import utils.*;
+import org.example.leetcode.hello.utils.*;
 
 import java.util.Arrays;
 

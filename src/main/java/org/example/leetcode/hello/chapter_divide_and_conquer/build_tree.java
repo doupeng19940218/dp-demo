@@ -6,7 +6,7 @@
 
 package org.example.leetcode.hello.chapter_divide_and_conquer;
 
-import utils.*;
+import org.example.leetcode.hello.utils.*;
 
 import java.util.Arrays;
 import java.util.HashMap;

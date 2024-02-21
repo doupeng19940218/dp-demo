@@ -6,7 +6,7 @@
 
 package org.example.leetcode.hello.chapter_searching;
 
-import utils.*;
+import org.example.leetcode.hello.utils.*;
 
 public class linear_search {
     /* 线性查找（数组） */

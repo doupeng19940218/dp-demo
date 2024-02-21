@@ -6,7 +6,7 @@
 
 package org.example.leetcode.hello.chapter_computational_complexity;
 
-import utils.*;
+import org.example.leetcode.hello.utils.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
