@@ -10,10 +10,16 @@ import lombok.SneakyThrows;
 import org.example.entity.Convertor;
 import org.example.entity.DemoDTO;
 import org.example.entity.User;
+import org.example.other.DogIntroductionAdvisor;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Constructor;
@@ -27,14 +33,23 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author walker.dou
  */
-@Controller
+@RestController
 @RequestMapping("/test")
-public class TestController {
+public class TestController implements ApplicationContextAware {
     public static final String CODE = "{$1.setA(\"i am changed\");}";
 
 //    @CreateCache(expire = 5, timeUnit = TimeUnit.MINUTES, name = "user")
     private Cache<String, User> userCache;
+    ApplicationContext applicationContext;
 
+    @RequestMapping("IntroductionInterceptor")
+    public void testIntroductionInterceptor() {
+        final DogIntroductionAdvisor.Dog dog = applicationContext.getBean(DogIntroductionAdvisor.Dog.class);
+        dog.run();
+        System.out.println("Animal.class.isAssignableFrom(dog.getClass()) = " + DogIntroductionAdvisor.Animal.class.isAssignableFrom(dog.getClass()));
+        DogIntroductionAdvisor.Animal animal = (DogIntroductionAdvisor.Animal) dog;
+        animal.eat();
+    }
     @RequestMapping
     @ResponseBody
     public String getTest(HttpServletRequest request) {
@@ -138,4 +153,8 @@ public class TestController {
         System.out.println(ld4 - ld3);
     }
 
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext = applicationContext;
+    }
 }
