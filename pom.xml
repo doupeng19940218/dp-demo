@@ -355,6 +355,11 @@
             <artifactId>protobuf-java-util</artifactId>
             <version>3.22.0</version>
         </dependency>
+        <dependency>
+            <groupId>io.github.burukeyou</groupId>
+            <artifactId>fast-retry-all</artifactId>
+            <version>0.2.0</version>
+        </dependency>
     </dependencies>
 
     <build>
