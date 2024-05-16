@@ -28,5 +28,6 @@ debezium:
     storageFile: E:/debezium/test/offsets/offset.dat
     tableWhitelist: test.test
     user: root
-
-
+ko-time:
+  pointcut: execution(public * org.example..*.*(..))
+  exception-enable: true
