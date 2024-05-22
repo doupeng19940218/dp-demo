@@ -370,6 +370,11 @@
             <artifactId>jna</artifactId>
             <version>5.12.1</version>
         </dependency>
+        <dependency>
+            <groupId>io.github.liubsyy</groupId>
+            <artifactId>FindInstancesOfClass</artifactId>
+            <version>1.0.3</version>
+        </dependency>
     </dependencies>
 
     <build>
