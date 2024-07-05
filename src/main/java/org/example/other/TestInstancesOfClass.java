@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class TestInstancesOfClass {
     public static void main(String[] args) {
-        helloJni();
+//        helloJni();
 
         final Demo demo = new Demo();
         final List<Demo> instanceList = InstancesOfClass.getInstanceList(Demo.class);
@@ -17,7 +17,7 @@ public class TestInstancesOfClass {
 
 
     }
-    public static native String helloJni();
+//    public static native String helloJni();
 
 
     public static class Demo{
