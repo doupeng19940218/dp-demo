@@ -1,36 +1,49 @@
-//package org.example.rule.drools;
-//
-//import org.example.entity.Order;
-//import org.kie.api.KieBase;
-//import org.kie.api.io.ResourceType;
-//import org.kie.api.runtime.KieSession;
-//import org.kie.internal.utils.KieHelper;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RestController;
-//
-///**
-// * @author walker.dou
-// */
-//@RestController
-//@RequestMapping("/drools")
-//public class DroolsDemo {
-//    @Autowired
-//    private KieSession session;
-//
-//    @Autowired
-//    private KieBase kieBase;
-//
-//    @GetMapping("/test")
-//    public void test(String[] args) {
-//        Order order = new Order();
-//        order.setOrderNo("drools 方式1 测试单号");
-//        order.setStatus("已完成");
-//        session.insert(order);//插入
-//        session.fireAllRules();//执行规则
-//    }
-//
+package org.example.rule.drools;
+
+import com.google.common.collect.Lists;
+import org.example.entity.Order;
+import org.example.groovy.CcmWorkOrder;
+import org.kie.api.KieBase;
+import org.kie.api.io.ResourceType;
+import org.kie.api.runtime.KieSession;
+import org.kie.internal.utils.KieHelper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+
+/**
+ * @author walker.dou
+ */
+@RestController
+@RequestMapping("/drools")
+public class DroolsDemo {
+    @Autowired
+    private KieSession session;
+
+    @Autowired
+    private KieBase kieBase;
+
+    @GetMapping("/test")
+    public void test(String[] args) {
+        Order order = new Order();
+        order.setOrderNo("drools 方式1 测试单号");
+        order.setStatus("已完成");
+        session.insert(order);//插入
+        session.fireAllRules();//执行规则
+    }
+
+
+    @GetMapping("/test/ccm")
+    public void testCcm() {
+        final CcmWorkOrder ccmWorkOrder = new CcmWorkOrder();
+        ccmWorkOrder.setReason("紧急产品事故-人身伤害");
+        ccmWorkOrder.setMaterial("116-2338-0000");
+        session.insert(ccmWorkOrder);//插入
+        session.fireAllRules();//执行规则
+    }
 //    @GetMapping("/test2")
 //    public void test2(String[] args) {
 //        String rule = "package com.ecovacs.adminmgr.drools\n" +
@@ -56,6 +69,6 @@
 //        ksession.fireAllRules();
 //        ksession.dispose();
 //    }
-//
-//
-//}
+
+
+}

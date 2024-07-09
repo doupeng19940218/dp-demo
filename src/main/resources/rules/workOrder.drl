@@ -1,0 +1,12 @@
+package org.example.drools
+import org.example.groovy.CcmWorkOrder
+dialect  "mvel"
+
+rule "判断客诉工单是否需要推送飞书"
+    when
+        $p : CcmWorkOrder( reason in ("紧急产品事故-人身伤害", "紧急产品事故-机器烧了/明火",
+                                      "紧急产品事故-重大漏水", "产品事故-机器冒烟",
+                                      "产品事故-机器烧焦", "产品事故-烧焦/冒烟/焦味") )
+    then
+        System.out.println("客诉工单需要推送飞书");
+end
